@@ -1,0 +1,571 @@
+{
+    "el-radio": {
+        "prefix": "radio",
+        "body": [
+            "<el-radio v-model=\"radio\" label=\"1\">备选项</el-radio>"
+        ],
+        "description": "单选框"
+    },
+    "el-radio-group": {
+        "prefix": "radio-group",
+        "body": [
+            "<el-radio-group v-model=\"radio\">",
+            "  <el-radio :label=\"3\">备选项</el-radio>",
+            "  <el-radio :label=\"6\">备选项</el-radio>",
+            "  <el-radio :label=\"9\">备选项</el-radio>",
+            "</el-radio-group>"
+        ],
+        "description": "单选框组"
+    },
+    "el-checkbox": {
+        "prefix": "checkbox",
+        "body": [
+            "<el-checkbox v-model=\"checked\">备选项</el-checkbox>"
+        ],
+        "description": "多选框"
+    },
+    "el-checkbox-group": {
+        "prefix": "checkbox-group",
+        "body": [
+            "<el-checkbox-group v-model=\"checkList\">",
+            "  <el-checkbox label=\"复选框 A\"></el-checkbox>",
+            "  <el-checkbox label=\"复选框 B\"></el-checkbox>",
+            "  <el-checkbox label=\"复选框 C\"></el-checkbox>",
+            "  <el-checkbox label=\"禁用\" disabled></el-checkbox>",
+            "  <el-checkbox label=\"选中且禁用\" disabled></el-checkbox>",
+            "</el-checkbox-group>"
+        ],
+        "description": "多选框组"
+    },
+    "el-input": {
+        "prefix": "input",
+        "body": [
+            "<el-input v-model=\"input\" placeholder=\"请输入内容\"></el-input>"
+        ],
+        "description": "输入框"
+    },
+    "el-input-number": {
+        "prefix": "input-number",
+        "body": [
+            "<el-input-number v-model=\"num\" @change=\"handleChange\" :min=\"1\" :max=\"10\" label=\"描述文字\"></el-input-number>"
+        ],
+        "description": "计数器"
+    },
+    "el-select": {
+        "prefix": "select",
+        "body": [
+            "<el-select v-model=\"value\" placeholder=\"请选择\">",
+            "  <el-option",
+            "    v-for=\"item in options\"",
+            "    :key=\"item.value\"",
+            "    :label=\"item.label\"",
+            "    :value=\"item.value\">",
+            "  </el-option>",
+            "</el-select>"
+        ],
+        "description": "选择器"
+    },
+    "el-cascader": {
+        "prefix": "cascader",
+        "body": [
+            "<el-cascader",
+            "    v-model=\"value\"",
+            "    :options=\"options\"",
+            "    @change=\"handleChange\"></el-cascader>"
+        ],
+        "description": "级联选择器"
+    },
+    "el-switch": {
+        "prefix": "switch",
+        "body": [
+            "<el-switch",
+            "  v-model=\"value\"",
+            "  active-color=\"#13ce66\"",
+            "  inactive-color=\"#ff4949\">",
+            "</el-switch>"
+        ],
+        "description": "开关"
+    },
+    "el-slider": {
+        "prefix": "slider",
+        "body": [
+            "<el-slider v-model=\"value\"></el-slider>"
+        ],
+        "description": "滑块"
+    },
+    "el-time-picker": {
+        "prefix": "time-picker",
+        "body": [
+            "<el-time-picker",
+            "  v-model=\"value\"",
+            "  :picker-options=\"{",
+            "    selectableRange: '18:30:00 - 20:30:00'",
+            "  }\"",
+            "  placeholder=\"任意时间点\">",
+            "</el-time-picker>",
+            "<el-time-picker",
+            "  arrow-control",
+            "  v-model=\"value\"",
+            "  :picker-options=\"{",
+            "    selectableRange: '18:30:00 - 20:30:00'",
+            "  }\"",
+            "  placeholder=\"任意时间点\">",
+            "</el-time-picker>"
+        ],
+        "description": "时间选择器"
+    },
+    "el-date-picker": {
+        "prefix": "date-picker",
+        "body": [
+            "<el-date-picker",
+            "  v-model=\"value\"",
+            "  type=\"date\"",
+            "  placeholder=\"选择日期\">",
+            "</el-date-picker>"
+        ],
+        "description": "日期选择器"
+    },
+    "el-upload": {
+        "prefix": "upload",
+        "body": [
+            "<el-upload",
+            "  class=\"upload-demo\"",
+            "  action=\"https://jsonplaceholder.typicode.com/posts/\"",
+            "  :on-preview=\"handlePreview\"",
+            "  :on-remove=\"handleRemove\"",
+            "  :before-remove=\"beforeRemove\"",
+            "  multiple",
+            "  :limit=\"3\"",
+            "  :on-exceed=\"handleExceed\"",
+            "  :file-list=\"fileList\">",
+            "  <el-button size=\"small\" type=\"primary\">点击上传</el-button>",
+            "  <div slot=\"tip\" class=\"el-upload__tip\">只能上传jpg/png文件，且不超过500kb</div>",
+            "</el-upload>"
+        ],
+        "description": "上传"
+    },
+    "el-rate": {
+        "prefix": "rate",
+        "body": [
+            "<el-rate v-model=\"value\"></el-rate>"
+        ],
+        "description": "评分"
+    },
+    "el-color-picker": {
+        "prefix": "color-picker",
+        "body": [
+            "<el-color-picker v-model=\"color\"></el-color-picker>"
+        ],
+        "description": "颜色选择器"
+    },
+    "el-transfer": {
+        "prefix": "transfer",
+        "body": [
+            "<el-transfer v-model=\"value\" :data=\"data\"></el-transfer>"
+        ],
+        "description": "穿梭框"
+    },
+    "el-form": {
+        "prefix": "form",
+        "body": [
+            "<el-form ref=\"form\" :model=\"form\" label-width=\"80px\">",
+            "  <el-form-item label=\"活动名称\">",
+            "    <el-input v-model=\"form.name\"></el-input>",
+            "  </el-form-item>",
+            "  <el-form-item label=\"活动区域\">",
+            "    <el-select v-model=\"form.region\" placeholder=\"请选择活动区域\">",
+            "      <el-option label=\"区域一\" value=\"shanghai\"></el-option>",
+            "      <el-option label=\"区域二\" value=\"beijing\"></el-option>",
+            "    </el-select>",
+            "  </el-form-item>",
+            "  <el-form-item label=\"活动时间\">",
+            "    <el-col :span=\"11\">",
+            "      <el-date-picker type=\"date\" placeholder=\"选择日期\" v-model=\"form.date1\" style=\"width: 100%;\"></el-date-picker>",
+            "    </el-col>",
+            "    <el-col class=\"line\" :span=\"2\">-</el-col>",
+            "    <el-col :span=\"11\">",
+            "      <el-time-picker placeholder=\"选择时间\" v-model=\"form.date2\" style=\"width: 100%;\"></el-time-picker>",
+            "    </el-col>",
+            "  </el-form-item>",
+            "  <el-form-item label=\"即时配送\">",
+            "    <el-switch v-model=\"form.delivery\"></el-switch>",
+            "  </el-form-item>",
+            "  <el-form-item label=\"活动性质\">",
+            "    <el-checkbox-group v-model=\"form.type\">",
+            "      <el-checkbox label=\"美食/餐厅线上活动\" name=\"type\"></el-checkbox>",
+            "      <el-checkbox label=\"地推活动\" name=\"type\"></el-checkbox>",
+            "      <el-checkbox label=\"线下主题活动\" name=\"type\"></el-checkbox>",
+            "      <el-checkbox label=\"单纯品牌曝光\" name=\"type\"></el-checkbox>",
+            "    </el-checkbox-group>",
+            "  </el-form-item>",
+            "  <el-form-item label=\"特殊资源\">",
+            "    <el-radio-group v-model=\"form.resource\">",
+            "      <el-radio label=\"线上品牌商赞助\"></el-radio>",
+            "      <el-radio label=\"线下场地免费\"></el-radio>",
+            "    </el-radio-group>",
+            "  </el-form-item>",
+            "  <el-form-item label=\"活动形式\">",
+            "    <el-input type=\"textarea\" v-model=\"form.desc\"></el-input>",
+            "  </el-form-item>",
+            "  <el-form-item>",
+            "    <el-button type=\"primary\" @click=\"onSubmit\">立即创建</el-button>",
+            "    <el-button>取消</el-button>",
+            "  </el-form-item>",
+            "</el-form>"
+        ],
+        "description": "表单"
+    },
+    "el-table": {
+        "prefix": "table",
+        "body": [
+            "<el-table",
+            "  :data=\"tableData\"",
+            "  style=\"width: 100%\">",
+            "  <el-table-column",
+            "    prop=\"date\"",
+            "    label=\"日期\"",
+            "    width=\"180\">",
+            "  </el-table-column>",
+            "  <el-table-column",
+            "    prop=\"name\"",
+            "    label=\"姓名\"",
+            "    width=\"180\">",
+            "  </el-table-column>",
+            "  <el-table-column",
+            "    prop=\"address\"",
+            "    label=\"地址\">",
+            "  </el-table-column>",
+            "</el-table>"
+        ],
+        "description": "表格"
+    },
+    "el-tag": {
+        "prefix": "tag",
+        "body": [
+            "<el-tag type=\"success\">标签</el-tag>"
+        ],
+        "description": "标签"
+    },
+    "el-progress": {
+        "prefix": "progress",
+        "body": [
+            "<el-progress :percentage=\"100\" status=\"success\"></el-progress>"
+        ],
+        "description": "进度条"
+    },
+    "el-tree": {
+        "prefix": "tree",
+        "body": [
+            "<el-tree :data=\"data\" :props=\"defaultProps\" @node-click=\"handleNodeClick\"></el-tree>"
+        ],
+        "description": "树形控件"
+    },
+    "el-pagination": {
+        "prefix": "pagination",
+        "body": [
+            "<el-pagination",
+            "  @size-change=\"handleSizeChange\"",
+            "  @current-change=\"handleCurrentChange\"",
+            "  :current-page=\"currentPage\"",
+            "  :page-sizes=\"[100, 200, 300, 400]\"",
+            "  :page-size=\"100\"",
+            "  layout=\"total, sizes, prev, pager, next, jumper\"",
+            "  :total=\"400\">",
+            "</el-pagination>"
+        ],
+        "description": "分页"
+    },
+    "el-badge": {
+        "prefix": "badge",
+        "body": [
+            "<el-badge :value=\"12\" class=\"item\">",
+            "  <el-button size=\"small\">评论</el-button>",
+            "</el-badge>"
+        ],
+        "description": "标记"
+    },
+    "el-avatar": {
+        "prefix": "avatar",
+        "body": [
+            "<el-avatar :size=\"size\" :src=\"circleUrl\"></el-avatar>"
+        ],
+        "description": "头像"
+    },
+    "el-skeleton": {
+        "prefix": "skeleton",
+        "body": [
+            "<el-skeleton />"
+        ],
+        "description": "骨架屏"
+    },
+    "el-empty": {
+        "prefix": "empty",
+        "body": [
+            "<el-empty description=\"描述文字\"></el-empty>"
+        ],
+        "description": "空状态"
+    },
+    "el-descriptions": {
+        "prefix": "descriptions",
+        "body": [
+            "<el-descriptions title=\"用户信息\">",
+            "    <el-descriptions-item label=\"用户名\">kooriookami</el-descriptions-item>",
+            "    <el-descriptions-item label=\"手机号\">18100000000</el-descriptions-item>",
+            "    <el-descriptions-item label=\"居住地\">苏州市</el-descriptions-item>",
+            "    <el-descriptions-item label=\"备注\">",
+            "      <el-tag size=\"small\">学校</el-tag>",
+            "    </el-descriptions-item>",
+            "    <el-descriptions-item label=\"联系地址\">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>",
+            "</el-descriptions>"
+        ],
+        "description": "描述列表"
+    },
+    "el-result": {
+        "prefix": "result",
+        "body": [
+            "<el-result icon=\"success\" title=\"成功提示\" subTitle=\"请根据提示进行操作\">",
+            "  <template slot=\"extra\">",
+            "    <el-button type=\"primary\" size=\"medium\">返回</el-button>",
+            "  </template>",
+            "</el-result>"
+        ],
+        "description": "结果"
+    },
+    "el-alert": {
+        "prefix": "alert",
+        "body": [
+            "<el-alert",
+            "    title=\"成功提示的文案\"",
+            "    type=\"success\">",
+            "  </el-alert>"
+        ],
+        "description": "警告"
+    },
+    "el-menu": {
+        "prefix": "menu",
+        "body": [
+            "<el-menu :default-active=\"activeIndex\" class=\"el-menu-demo\" mode=\"horizontal\" @select=\"handleSelect\">",
+            "  <el-menu-item index=\"1\">处理中心</el-menu-item>",
+            "  <el-submenu index=\"2\">",
+            "    <template slot=\"title\">我的工作台</template>",
+            "    <el-menu-item index=\"2-1\">选项1</el-menu-item>",
+            "    <el-menu-item index=\"2-2\">选项2</el-menu-item>",
+            "    <el-menu-item index=\"2-3\">选项3</el-menu-item>",
+            "    <el-submenu index=\"2-4\">",
+            "      <template slot=\"title\">选项4</template>",
+            "      <el-menu-item index=\"2-4-1\">选项1</el-menu-item>",
+            "      <el-menu-item index=\"2-4-2\">选项2</el-menu-item>",
+            "      <el-menu-item index=\"2-4-3\">选项3</el-menu-item>",
+            "    </el-submenu>",
+            "  </el-submenu>",
+            "  <el-menu-item index=\"3\" disabled>消息中心</el-menu-item>",
+            "  <el-menu-item index=\"4\"><a href=\"https://www.ele.me\" target=\"_blank\">订单管理</a></el-menu-item>",
+            "</el-menu>"
+        ],
+        "description": "导航菜单"
+    },
+    "el-tabs": {
+        "prefix": "tabs",
+        "body": [
+            "<el-tabs v-model=\"activeName\" @tab-click=\"handleClick\">",
+            "  <el-tab-pane label=\"用户管理\" name=\"first\">用户管理</el-tab-pane>",
+            "  <el-tab-pane label=\"配置管理\" name=\"second\">配置管理</el-tab-pane>",
+            "  <el-tab-pane label=\"角色管理\" name=\"third\">角色管理</el-tab-pane>",
+            "  <el-tab-pane label=\"定时任务补偿\" name=\"fourth\">定时任务补偿</el-tab-pane>",
+            "</el-tabs>"
+        ],
+        "description": "标签页"
+    },
+    "el-breadcrumb": {
+        "prefix": "breadcrumb",
+        "body": [
+            "<el-breadcrumb separator=\"/\">",
+            "  <el-breadcrumb-item :to=\"{ path: '/' }\">首页</el-breadcrumb-item>",
+            "  <el-breadcrumb-item><a href=\"/\">活动管理</a></el-breadcrumb-item>",
+            "  <el-breadcrumb-item>活动列表</el-breadcrumb-item>",
+            "  <el-breadcrumb-item>活动详情</el-breadcrumb-item>",
+            "</el-breadcrumb>"
+        ],
+        "description": "面包屑"
+    },
+    "el-page-header": {
+        "prefix": "page-header",
+        "body": [
+            "<el-page-header @back=\"goBack\" content=\"详情页面\"></el-page-header>"
+        ],
+        "description": "页头"
+    },
+    "el-dropdown-menu": {
+        "prefix": "dropdown-menu",
+        "body": [
+            "<el-dropdown-menu slot=\"dropdown\">",
+            "    <el-dropdown-item>黄金糕</el-dropdown-item>",
+            "    <el-dropdown-item>狮子头</el-dropdown-item>",
+            "    <el-dropdown-item>螺蛳粉</el-dropdown-item>",
+            "    <el-dropdown-item disabled>双皮奶</el-dropdown-item>",
+            "    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>",
+            "  </el-dropdown-menu>",
+            "</el-dropdown>"
+        ],
+        "description": "下拉菜单"
+    },
+    "el-steps": {
+        "prefix": "steps",
+        "body": [
+            "<el-steps :active=\"active\" finish-status=\"success\">",
+            "  <el-step title=\"步骤 1\"></el-step>",
+            "  <el-step title=\"步骤 2\"></el-step>",
+            "  <el-step title=\"步骤 3\"></el-step>",
+            "</el-steps>"
+        ],
+        "description": "步骤条"
+    },
+    "el-dialog": {
+        "prefix": "dialog",
+        "body": [
+            "<el-dialog",
+            "  title=\"提示\"",
+            "  :visible.sync=\"dialogVisible\"",
+            "  width=\"30%\"",
+            "  :before-close=\"handleClose\">",
+            "  <span>这是一段信息</span>",
+            "  <span slot=\"footer\" class=\"dialog-footer\">",
+            "    <el-button @click=\"dialogVisible = false\">取 消</el-button>",
+            "    <el-button type=\"primary\" @click=\"dialogVisible = false\">确 定</el-button>",
+            "  </span>",
+            "</el-dialog>"
+        ],
+        "description": "对话框"
+    },
+    "el-tooltip": {
+        "prefix": "tooltip",
+        "body": [
+            "<el-tooltip class=\"item\" effect=\"dark\" content=\"Top Left 提示文字\" placement=\"top-start\">",
+            "  <el-button>上左</el-button>",
+            "</el-tooltip>"
+        ],
+        "description": "文字提示"
+    },
+    "el-popover": {
+        "prefix": "popover",
+        "body": [
+            "<el-popover",
+            "  placement=\"top-start\"",
+            "  title=\"标题\"",
+            "  width=\"200\"",
+            "  trigger=\"hover\"",
+            "  content=\"这是一段内容,这是一段内容,这是一段内容,这是一段内容。\">",
+            "  <el-button slot=\"reference\">hover 激活</el-button>",
+            "</el-popover>"
+        ],
+        "description": "弹出框"
+    },
+    "el-popconfirm": {
+        "prefix": "popconfirm",
+        "body": [
+            "<el-popconfirm",
+            "  title=\"这是一段内容确定删除吗？\"",
+            ">",
+            "  <el-button slot=\"reference\">删除</el-button>",
+            "</el-popconfirm>"
+        ],
+        "description": "气泡确认框"
+    },
+    "el-card": {
+        "prefix": "card",
+        "body": [
+            "<el-card class=\"box-card\">",
+            "  <div slot=\"header\" class=\"clearfix\">",
+            "    <span>卡片名称</span>",
+            "    <el-button style=\"float: right; padding: 3px 0\" type=\"text\">操作按钮</el-button>",
+            "  </div>",
+            "  <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">",
+            "    {{'列表内容 ' + o }}",
+            "  </div>",
+            "</el-card>"
+        ],
+        "description": "卡片"
+    },
+    "el-carousel": {
+        "prefix": "carousel",
+        "body": [
+            "<el-carousel height=\"150px\">",
+            "  <el-carousel-item v-for=\"item in 4\" :key=\"item\">",
+            "    <h3 class=\"small\">{{ item }}</h3>",
+            "  </el-carousel-item>",
+            "</el-carousel>"
+        ],
+        "description": "走马灯"
+    },
+    "el-collapse": {
+        "prefix": "collapse",
+        "body": [
+            "<el-collapse v-model=\"activeNames\" @change=\"handleChange\">",
+            "  <el-collapse-item title=\"一致性 Consistency\" name=\"1\">",
+            "    <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>",
+            "    <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>",
+            "  </el-collapse-item>",
+            "  <el-collapse-item title=\"反馈 Feedback\" name=\"2\">",
+            "    <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>",
+            "    <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>",
+            "  </el-collapse-item>",
+            "</el-collapse>"
+        ],
+        "description": "折叠面板"
+    },
+    "el-timeline": {
+        "prefix": "timeline",
+        "body": [
+            "<el-timeline :reverse=\"reverse\">",
+            "    <el-timeline-item",
+            "      v-for=\"(activity, index) in activities\"",
+            "      :key=\"index\"",
+            "      :timestamp=\"activity.timestamp\">",
+            "      {{activity.content}}",
+            "    </el-timeline-item>",
+            "  </el-timeline>"
+        ],
+        "description": "时间线"
+    },
+    "el-divider": {
+        "prefix": "divider",
+        "body": [
+            "<el-divider></el-divider>"
+        ],
+        "description": "分割线"
+    },
+    "el-calendar": {
+        "prefix": "calendar",
+        "body": [
+            "<el-calendar v-model=\"value\"></el-calendar>"
+        ],
+        "description": "日历"
+    },
+    "el-image": {
+        "prefix": "image",
+        "body": [
+            "<el-image style=\"width: 100px; height: 100px\" :src=\"url\" :fit=\"fit\"></el-image>"
+        ],
+        "description": "图片"
+    },
+    "el-backtop": {
+        "prefix": "backtop",
+        "body": [
+            "<el-backtop target=\".page-component__scroll .el-scrollbar__wrap\"></el-backtop>"
+        ],
+        "description": "回到顶部"
+    },
+    "el-drawer": {
+        "prefix": "drawer",
+        "body": [
+            "<el-drawer",
+            "  title=\"我是标题\"",
+            "  :visible.sync=\"drawer\"",
+            "  :direction=\"direction\"",
+            "  :before-close=\"handleClose\">",
+            "  <span>我来啦!</span>",
+            "</el-drawer>"
+        ],
+        "description": "抽屉"
+    }
+}
