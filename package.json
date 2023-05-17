@@ -9,7 +9,7 @@
         "饿了吗",
         "代码片段"
     ],
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "wangluo",
     "engines": {
         "vscode": "^1.67.0"

@@ -1,4 +1,25 @@
 {
+    "el-icon": {
+        "prefix": "icon",
+        "body": [
+            "<i class=\"el-icon-edit\"></i>"
+        ],
+        "description": "图标"
+    },
+    "el-button": {
+        "prefix": "button",
+        "body": [
+            "<el-button type=\"primary\">主要按钮</el-button>"
+        ],
+        "description": "按钮"
+    },
+    "el-link": {
+        "prefix": "link",
+        "body": [
+            "<el-link type=\"primary\">主要链接</el-link>"
+        ],
+        "description": "文字链接"
+    },
     "el-radio": {
         "prefix": "radio",
         "body": [
