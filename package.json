@@ -1,5 +1,5 @@
 {
-    "name": "element-ui-snippets",
+    "name": "vue-element-ui-snippets",
     "displayName": "Element-UI Snippets",
     "description": "ElementUI的代码提示插件",
     "keywords": [
@@ -9,7 +9,7 @@
         "饿了吗",
         "代码片段"
     ],
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "wangluo",
     "engines": {
         "vscode": "^1.67.0"
