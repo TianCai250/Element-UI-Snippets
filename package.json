@@ -9,17 +9,17 @@
         "饿了吗",
         "代码片段"
     ],
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "wangluo",
     "engines": {
         "vscode": "^1.67.0"
     },
     "categories": [
-        "Other"
+        "Snippets"
     ],
     "icon": "images/logo.png",
     "activationEvents": [
-        "onLanguage:vue"
+        "onLanguage:vuejs"
     ],
     "main": "./src/extension",
     "contributes": {
@@ -30,6 +30,10 @@
             },
             {
                 "language": "vue-html",
+                "path": "./src/extensions/snippets.json"
+            },
+            {
+                "language": "html",
                 "path": "./src/extensions/snippets.json"
             }
         ]
