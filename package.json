@@ -9,7 +9,7 @@
         "饿了吗",
         "代码片段"
     ],
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "wangluo",
     "engines": {
         "vscode": "^1.67.0"
@@ -29,10 +29,6 @@
                 "path": "./src/extensions/snippets.json"
             },
             {
-                "language": "vue-html",
-                "path": "./src/extensions/snippets.json"
-            },
-            {
                 "language": "html",
                 "path": "./src/extensions/snippets.json"
             }
@@ -41,7 +37,8 @@
     "scripts": {
         "lint": "eslint .",
         "pretest": "npm run lint",
-        "test": "node ./test/runTest.js"
+        "test": "node ./test/runTest.js",
+        "build": "vsce package"
     },
     "devDependencies": {
         "@types/vscode": "^1.67.0",
